@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+    --font-primary: 'DM Sans', sans-serif;
+    --font-heading: "Lexend Deca", sans-serif;
+    --color-orange: #E55812;
+    --color-primary: #202C39;
+    --color-green: #29CC39;
+    --color-black: #000;
+    --shadow-primary: 0px 0px 6px 0px #00000029;
+    --shadow-secondary: 0px 0px 7px 0px #00000024;
+    --radius-30px: 30px;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(180deg, #FFEBE3 0%, #E6F2FF 90.93%);
+}
+
+.bg-gradient-primary-for.bg-gradient-primary-hover:hover{
+    background: linear-gradient(180deg, #FFEBE3 0%, #E6F2FF 90.93%);
+}
+
+body {
+    @apply font-primary text-primary font-medium;
+}
+
+h1, h2, h4, h6 {
+    @apply font-heading font-bold
+}
+
+.sidebar nav ul li a{
+    @apply flex gap-3.5 items-center font-semibold px-4 py-3.5 mb-3.5
+}
+
+.sidebar nav ul li a.active , .sidebar nav ul li a:hover{
+    @apply text-orange bg-[#E5581229] rounded-lg
+}
+
+.sidebar nav ul li a.active svg path , .sidebar nav ul li a:hover svg path{
+    @apply fill-orange
+}
+
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date{
+    @apply text-left
+}
+table.dataTable > thead > tr > th{
+    @apply border-none
+}
+table.dataTable > thead > tr > th,table.dataTable > tbody > tr > td{
+    @apply text-sm py-4 text-nowrap
+}
+table.dataTable.stripe > tbody > tr:nth-child(odd) > *, table.dataTable.display > tbody > tr:nth-child(odd) > *{
+    @apply shadow-none
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    @apply py-0.5 px-3 m-0 bg-orange text-white
+}
+
+.dataTables_wrapper .dataTables_length{
+    @apply mb-7
+}
