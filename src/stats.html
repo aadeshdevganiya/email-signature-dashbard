@@ -20,11 +20,11 @@
             <div id="sidebar"
                 class="sidebar fixed lg:static inset-y-0 left-0 z-40 w-[320px] lg:w-[300px]  px-4  sm:px-7 bg-white lg:bg-transparent transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto">
                 <div class="flex mb-12 pt-7">
+                    <a href="index.html" class="mx-auto">
+                        <img src="assets/images/logo.png" alt="Logo"
+                            class=" object-contain">
+                    </a>
 
-                    <img src="assets/images/logo.png" alt="Logo"
-                        class="mx-auto object-contain">
-
-                    <!-- Close button (mobile only) -->
                     <div class="lg:hidden flex justify-end p-4">
                         <button id="closeSidebar" class="text-xl">✕</button>
                     </div>
@@ -265,10 +265,10 @@
                     </div>
                 </header>
                 <main>
-                    <div class="mb-5">
+                    <div class="mb-3 sm:mb-5">
                         <ul>
                             <li
-                                class="list-disc text-orange ml-6 md:mb-[18px] pt-2.5 pb-3 ">Keep
+                                class="list-disc text-orange ml-6 md:mb-[18px">Keep
                                 track the Performance</li>
                         </ul>
                     </div>
@@ -281,16 +281,40 @@
                             which social platform your customers and partners
                             are more interested in.</p>
                     </div>
-                    <div class="grid grid-cols-2 gap-10">
+                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-10">
+                        <div>
+                            <div class="mb-3 sm:mb-5">
+                                <ul>
+                                    <li
+                                        class="list-disc text-orange ml-6 md:mb-[18px] ">Web,
+                                        Email & Banner Stats</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white rounded-xl backdrop-blur-[187px] p-4 h-[381px]">
+                                <canvas id="barLineChart"></canvas>
+                            </div>
+                        </div>
                         <div>
                             <div class="mb-5">
                                 <ul>
                                     <li
-                                        class="list-disc text-orange ml-6 md:mb-[18px] pt-2.5 pb-3 ">Web, Email  & Banner Stats</li>
+                                        class="list-disc text-orange ml-6 md:mb-[18px] ">App
+                                        Stats</li>
                                 </ul>
                             </div>
-                            <div>
-
+                            <div class="bg-white rounded-xl backdrop-blur-[187px] p-4 h-[381px]">
+                                <canvas id="horizontalBarChart"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-3 sm:mb-5">
+                                <ul>
+                                    <li
+                                        class="list-disc text-orange ml-6 md:mb-[18px] ">Social Stats</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white rounded-xl backdrop-blur-[187px] p-4 h-[381px]">
+                                <canvas id="pieChart"></canvas>
                             </div>
                         </div>
                     </div>
@@ -301,5 +325,7 @@
 
         <script src="assets/js/jquery-3.6.0.min.js"></script>
         <script src="assets/js/common.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="assets/js/charts.js"></script>
     </body>
 </html>
