@@ -11,11 +11,9 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend+Deca:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="assets/css/responsive.dataTables.min.css">
         <link href="./output.css" rel="stylesheet">
     </head>
-    <body class="bg-gradient-primary min-h-screen font-sans overflow-x-hidden">
+    <body class="bg-gradient-primary min-h-screen font-sans">
 
         <div class="flex gap-5 min-h-screen">
             <!-- Sidebar -->
@@ -103,7 +101,7 @@
                                 Employees</a>
                         </li>
                         <li>
-                            <a href="share-generator.html" class="active">
+                            <a href="share-generator.html">
                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -189,7 +187,7 @@
                                 Stats</a>
                         </li>
                         <li>
-                            <a href="switch-plan.html">
+                            <a href="switch-plan.html" class="active">
                                 <svg width="19" height="17" viewBox="0 0 19 17"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -267,93 +265,327 @@
                     </div>
                 </header>
                 <main>
+                    <div class="mb-6 sm:mb-8">
+                        <ul>
+                            <li
+                                class="list-disc text-orange ml-6 md:mb-[18px] pt-2.5 pb-3 ">Your
+                                Plan Detail</li>
+                        </ul>
+                    </div>
                     <div
-                        class="w-full">
-                        <div class="flex justify-between">
-                            <ul>
-                                <li
-                                    class="list-disc text-orange ml-6 mb-[18px] pt-2.5 pb-3 text-xs sm:text-base">Share
-                                    Your Generator To Your Employees</li>
-                            </ul>
+                        class="flex justify-center items-center space-x-3 mb-6 sm:mb-10">
+                        <span id="label-monthly"
+                            class="font-semibold text-black text-sm sm:text-base">Bill
+                            Monthly</span>
 
+                        <div
+                            id="billing-toggle"
+                            class="w-11 sm:w-14 h-6 sm:h-7 bg-[#E558121A] rounded-full flex items-center px-1 cursor-pointer transition duration-300">
+                            <div
+                                id="toggle-indicator"
+                                class="w-4 sm:w-5 h-4 sm:h-5 bg-orange rounded-full transition-transform duration-300 transform"></div>
+                        </div>
+
+                        <span id="label-annually"
+                            class="font-semibold text-gray-500 text-sm sm:text-base">Bill
+                            Annually
+                            (10% off)</span>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 justify-center gap-8 select-plan">
+                        <div
+                            class="max-w-[480px] mx-auto p-[22px] bg-white rounded-3xl shadow-primary border-2 border-white  hover:border-orange plan active">
+                            <div
+                                class="plan-data pt-5 sm:pt-8 pb-5 xl:px-10 text-center bg-gradient-primary rounded-[18px] mb-6 sm:mb-8 px-3.5 ">
+                                <div
+                                    class="text-[20px] lg:text-[28px] font-bold">Personal</div>
+                                <p
+                                    class="text-sm lg:text-base max-w-[352px] mx-auto font-normal text-[#202C39CC] mb-4">Lorem
+                                    Ipsum is simply dummy text of the printing
+                                    and typesetting industry. Lorem Ipsum has
+                                    been
+                                    the industry's standard dummy text ever
+                                    since
+                                    the 1500s</p>
+                                <div
+                                    class="font-bold text-lg lg:text-2xl leading-[22px] lg:leading-[44px]">FREE</div>
+                                <span
+                                    class="text-sm lg:text-base text-[#202C39CC] mb-7 block">(Or
+                                    $0/Year)</span>
+                                <a href="#"
+                                    class="plan-button py-3 lg:py-3.5 max-w-[346px] mx-auto bg-gradient-to-b from-[#FF925C] to-[#E55812] block  rounded-full font-semibold text-white text-sm transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+                                    Your Current Plan
+                                </a>
+                            </div>
+                            <div>
+                                <div
+                                    class="text-lg lg:text-xl text-[#202C39B2] mb-4 sm:mb-6">Advanced
+                                    Email Signatures</div>
+                                <ul>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Signature analytics
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Messenger, video, contact blocks
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Promotional banners & custom social
+                                        icons
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Themes and design customization
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Professional templates and customization
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div
-                            class="bg-white rounded-2xl backdrop-blur-[187px] py-22 md:py-44 overflow-hidden">
-
-                            <div class="flex justify-center items-center">
-                                <div class="max-w-[420px] mx-auto text-center px-3.5">
-                                    <div
-                                        class="font-semibold text-orange mb-4 md:mb-9">Share
-                                        your generator to your employees</div>
-                                    <div
-                                        class="mt-10 space-y-6">
-                                        <!-- Dropdown 1 -->
-                                        <div class="relative text-sm"
-                                            id="dropdown1">
-                                            <button id="dropdownButton1"
-                                                class="w-full border border-[#EBEBEB] rounded-lg px-5 py-4 text-left flex justify-between items-center cursor-pointer">
-                                                <span
-                                                    id="dropdownLabel1">Select
-                                                    Generator</span>
-                                                <svg width="13" height="13"
-                                                    id="arrow1"
-                                                    viewBox="0 0 13 13"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M12.7587 3.08493C12.598 2.9241 12.4075 2.84375 12.1874 2.84375H0.812561C0.592368 2.84375 0.402012 2.9241 0.24118 3.08493C0.080349 3.24594 0 3.4363 0 3.65636C0 3.87637 0.080349 4.06673 0.24118 4.2276L5.92862 9.91504C6.08963 10.0759 6.27998 10.1564 6.5 10.1564C6.72002 10.1564 6.91055 10.0759 7.07125 9.91504L12.7587 4.22756C12.9193 4.06673 13 3.87637 13 3.65631C13 3.4363 12.9193 3.24594 12.7587 3.08493Z"
-                                                        fill="black" />
-                                                </svg>
-
-                                            </button>
-                                            <ul id="dropdownMenu1"
-                                                class="absolute w-full bg-white shadow-primary  rounded-md mt-1  z-10 hidden overflow-hidden text-left">
-                                                <li
-                                                    class="px-5 py-4 hover:bg-[#E558124D] hover:text-orange cursor-pointer">Test
-                                                    1</li>
-                                                <li
-                                                    class="px-5 py-4 hover:bg-[#E558124D] hover:text-orange cursor-pointer">Test
-                                                    2</li>
-                                            </ul>
-                                        </div>
-
-                                        <!-- Dropdown 2 -->
-                                        <div class="relative text-sm"
-                                            id="dropdown2">
-                                            <button id="dropdownButton2"
-                                                class="w-full border border-[#EBEBEB] rounded-lg px-5 py-4 text-left flex justify-between items-center cursor-pointer">
-                                                <span
-                                                    id="dropdownLabel2">Select
-                                                    A Email</span>
-                                                <svg width="13" height="13"
-                                                    id="arrow2"
-                                                    viewBox="0 0 13 13"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M12.7587 3.08493C12.598 2.9241 12.4075 2.84375 12.1874 2.84375H0.812561C0.592368 2.84375 0.402012 2.9241 0.24118 3.08493C0.080349 3.24594 0 3.4363 0 3.65636C0 3.87637 0.080349 4.06673 0.24118 4.2276L5.92862 9.91504C6.08963 10.0759 6.27998 10.1564 6.5 10.1564C6.72002 10.1564 6.91055 10.0759 7.07125 9.91504L12.7587 4.22756C12.9193 4.06673 13 3.87637 13 3.65631C13 3.4363 12.9193 3.24594 12.7587 3.08493Z"
-                                                        fill="black" />
-                                                </svg>
-
-                                            </button>
-                                            <ul id="dropdownMenu2"
-                                                class="absolute w-full bg-white shadow-primary rounded mt-1  z-10 hidden text-left">
-                                                <li
-                                                    class="px-5 py-4 hover:bg-[#E558124D] text-orange cursor-pointer">Email
-                                                    1</li>
-                                                <li
-                                                    class="px-5 py-4 hover:bg-[#E558124D] cursor-pointer">Email
-                                                    2</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <a href="#"
-                                        class="py-3.5 px-[60px] mt-6   inline-block mx-auto bg-gradient-to-b from-[#FF925C] to-[#E55812] rounded-full text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
-                                        Share Generator
-                                    </a>
-                                </div>
+                            class="max-w-[480px] mx-auto p-[22px] bg-white rounded-3xl shadow-primary border-2 border-white  hover:border-orange plan">
+                            <div
+                                class="plan-data pt-5 sm:pt-8 pb-5 xl:px-10 text-center bg-gradient-primary rounded-[18px] mb-6 sm:mb-8 px-3.5 ">
+                                <div
+                                    class="text-[20px] lg:text-[28px] font-bold">Team</div>
+                                <p
+                                    class="text-sm lg:text-base max-w-[352px] mx-auto font-normal text-[#202C39CC] mb-4">Lorem
+                                    Ipsum is simply dummy text of the printing
+                                    and typesetting industry. Lorem Ipsum has
+                                    been
+                                    the industry's standard dummy text ever
+                                    since
+                                    the 1500s</p>
+                                <div
+                                    class="font-bold text-lg lg:text-2xl leading-[22px] lg:leading-[44px]">$5.99/month</div>
+                                <span
+                                    class="text-sm lg:text-base text-[#202C39CC] mb-7 block">(Or
+                                    $60/Year)</span>
+                                <a href="#"
+                                    class="plan-button py-3 lg:py-3.5 max-w-[346px] mx-auto bg-gradient-to-b from-[#FF925C] to-[#E55812] block  rounded-full font-semibold text-white text-sm transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+                                    Upgrade Your Plan
+                                </a>
                             </div>
-
+                            <div>
+                                <div
+                                    class="text-lg lg:text-xl text-[#202C39B2] mb-4 sm:mb-6">Advanced
+                                    Email Signatures</div>
+                                <ul>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Signature analytics
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Messenger, video, contact blocks
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Promotional banners & custom social
+                                        icons
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Themes and design customization
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Professional templates and customization
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div
+                            class="max-w-[480px] mx-auto p-[22px] bg-white rounded-3xl shadow-primary border-2 border-white  hover:border-orange plan ">
+                            <div
+                                class="plan-data pt-5 sm:pt-8 pb-5 xl:px-10 text-center bg-gradient-primary rounded-[18px] mb-6 sm:mb-8 px-3.5 ">
+                                <div
+                                    class="text-[20px] lg:text-[28px] font-bold">Corporate</div>
+                                <p
+                                    class="text-sm lg:text-base max-w-[352px] mx-auto font-normal text-[#202C39CC] mb-4">Lorem
+                                    Ipsum is simply dummy text of the printing
+                                    and typesetting industry. Lorem Ipsum has
+                                    been
+                                    the industry's standard dummy text ever
+                                    since
+                                    the 1500s</p>
+                                <div
+                                    class="font-bold text-lg lg:text-2xl leading-[22px] lg:leading-[44px]">$35/month</div>
+                                <span
+                                    class="text-sm lg:text-base text-[#202C39CC] mb-7 block">(Or
+                                    $350/Year)</span>
+                                <a href="#"
+                                    class="plan-button py-3 lg:py-3.5 max-w-[346px] mx-auto bg-gradient-to-b from-[#FF925C] to-[#E55812] block  rounded-full font-semibold text-white text-sm transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+                                    Upgrade Your Plan
+                                </a>
+                            </div>
+                            <div>
+                                <div
+                                    class="text-lg lg:text-xl text-[#202C39B2] mb-4 sm:mb-6">Advanced
+                                    Email Signatures</div>
+                                <ul>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Signature analytics
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Messenger, video, contact blocks
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Promotional banners & custom social
+                                        icons
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Themes and design customization
+                                    </li>
+                                    <li
+                                        class="flex gap-3.5 font-normal mb-3 sm:mb-4 text-sm lg:text-base items-center">
+                                        <svg width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="11" cy="11" r="11"
+                                                fill="#F4793D" />
+                                            <path
+                                                d="M9.93141 13.0143C9.99497 12.9231 10.0226 12.8651 10.064 12.8209C11.907 10.9751 13.7501 9.13488 15.5931 7.28911C15.8334 7.04872 16.107 6.93819 16.4386 7.0349C16.9746 7.1924 17.1736 7.85279 16.8171 8.2866C16.8005 8.30594 16.784 8.32528 16.7646 8.34462C14.6757 10.4391 12.584 12.5335 10.4896 14.6252C10.263 14.8518 9.98668 14.9181 9.68549 14.8186C9.56392 14.7772 9.4451 14.6998 9.35392 14.6086C8.32051 13.5807 7.29263 12.5473 6.26198 11.5195C6.02159 11.2791 5.9387 10.9972 6.04646 10.6795C6.14869 10.37 6.37803 10.1932 6.69856 10.1517C6.97211 10.1158 7.19316 10.2235 7.38657 10.417C8.19064 11.2238 8.99748 12.0306 9.80431 12.8375C9.84023 12.8734 9.86786 12.9231 9.93141 13.0143Z"
+                                                fill="white" />
+                                        </svg>
+                                        Professional templates and customization
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </main>
@@ -362,8 +594,34 @@
         </div>
 
         <script src="assets/js/jquery-3.6.0.min.js"></script>
-        <script src="assets/js/jquery.dataTables.min.js"></script>
-        <script src="assets/js/dataTables.responsive.min.js"></script>
         <script src="assets/js/common.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("billing-toggle");
+  const indicator = document.getElementById("toggle-indicator");
+  const monthlyLabel = document.getElementById("label-monthly");
+  const annuallyLabel = document.getElementById("label-annually");
+
+  let isMonthly = true;
+
+  toggle.addEventListener("click", () => {
+    isMonthly = !isMonthly;
+
+    if (isMonthly) {
+      indicator.classList.remove("translate-x-4", "sm:translate-x-7");
+      monthlyLabel.classList.remove("text-gray-500");
+      monthlyLabel.classList.add("text-black");
+      annuallyLabel.classList.remove("text-black");
+      annuallyLabel.classList.add("text-gray-500");
+    } else {
+      indicator.classList.add("translate-x-4", "sm:translate-x-7");
+      monthlyLabel.classList.remove("text-black");
+      monthlyLabel.classList.add("text-gray-500");
+      annuallyLabel.classList.remove("text-gray-500");
+      annuallyLabel.classList.add("text-black");
+    }
+  });
+});
+        </script>
     </body>
 </html>

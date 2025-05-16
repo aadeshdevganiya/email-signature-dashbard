@@ -19,6 +19,10 @@
 .bg-gradient-primary-for.bg-gradient-primary-hover:hover{
     background: linear-gradient(180deg, #FFEBE3 0%, #E6F2FF 90.93%);
 }
+/* 
+.bg-gradient-primary-active{
+    background: linear-gradient(180deg, #eff0f1 0%, #eff0f1 90.93%) !important;
+} */
 
 body {
     @apply font-primary text-primary font-medium;
@@ -62,4 +66,17 @@ table.dataTable.stripe > tbody > tr:nth-child(odd) > *, table.dataTable.display 
 
 .Signature-tab .tab-item.active{
     @apply bg-orange text-white
+}
+
+.select-plan .plan.active{
+    @apply border-primary
+}
+.select-plan .plan.active .plan-data{
+    @apply bg-gradient-to-b from-[#eff0f1] to-[#eff0f1]
+}
+.select-plan .plan.active .plan-button{
+    @apply bg-gradient-to-b from-[#202c39] to-[#202c39]
+}
+.select-plan .plan.active ul li svg circle{
+    @apply fill-primary 
 }
