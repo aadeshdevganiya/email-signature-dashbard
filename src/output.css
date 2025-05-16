@@ -1317,6 +1317,11 @@
       margin-bottom: calc(var(--spacing) * 10);
     }
   }
+  .sm\:mb-12 {
+    @media (width >= 40rem) {
+      margin-bottom: calc(var(--spacing) * 12);
+    }
+  }
   .sm\:block {
     @media (width >= 40rem) {
       display: block;
