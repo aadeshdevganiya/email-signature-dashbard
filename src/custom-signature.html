@@ -11,11 +11,9 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend+Deca:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="assets/css/responsive.dataTables.min.css">
         <link href="./output.css" rel="stylesheet">
     </head>
-    <body class="bg-gradient-primary min-h-screen font-sans overflow-x-hidden">
+    <body class="bg-gradient-primary min-h-screen font-sans">
 
         <div class="flex gap-5 min-h-screen">
             <!-- Sidebar -->
@@ -103,7 +101,7 @@
                                 Employees</a>
                         </li>
                         <li>
-                            <a href="share-generator.html" class="active">
+                            <a href="share-generator.html">
                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +132,7 @@
                                 Create Signature</a>
                         </li>
                         <li>
-                            <a href="custom-signature.html">
+                            <a href="custom-signature.html" class="active">
                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -268,92 +266,195 @@
                 </header>
                 <main>
                     <div
-                        class="w-full">
-                        <div class="flex justify-between">
+                        class="grid grid-cols-1 xl:grid-cols-2 gap-10 md:gap-5 xl:gap-8  w-full">
+                        <div>
                             <ul>
                                 <li
-                                    class="list-disc text-orange ml-6 mb-[18px] pt-2.5 pb-3 text-xs sm:text-base">Share
-                                    Your Generator To Your Employees</li>
+                                    class="list-disc text-orange ml-6 md:mb-[18px] pt-2.5 pb-3">Custom
+                                    Signature</li>
                             </ul>
-
-                        </div>
-                        <div
-                            class="bg-white rounded-2xl backdrop-blur-[187px] py-22 md:py-44 overflow-hidden">
-
-                            <div class="flex justify-center items-center">
-                                <div class="max-w-[420px] mx-auto text-center px-3.5">
+                            <div
+                                class="rounded-[20px] sm:p-2 overflow-x-hidden">
+                                <div
+                                    class="bg-white backdrop-blur-[187px] rounded-[20px] p-4 sm:p-9 2xl:p-12 Signature-tab lg:h-[712px] 2xl:h-[768px]">
                                     <div
-                                        class="font-semibold text-orange mb-4 md:mb-9">Share
-                                        your generator to your employees</div>
-                                    <div
-                                        class="mt-10 space-y-6">
-                                        <!-- Dropdown 1 -->
-                                        <div class="relative text-sm"
-                                            id="dropdown1">
-                                            <button id="dropdownButton1"
-                                                class="w-full border border-[#EBEBEB] rounded-lg px-5 py-4 text-left flex justify-between items-center cursor-pointer">
-                                                <span
-                                                    id="dropdownLabel1">Select
-                                                    Generator</span>
-                                                <svg width="13" height="13"
-                                                    id="arrow1"
-                                                    viewBox="0 0 13 13"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M12.7587 3.08493C12.598 2.9241 12.4075 2.84375 12.1874 2.84375H0.812561C0.592368 2.84375 0.402012 2.9241 0.24118 3.08493C0.080349 3.24594 0 3.4363 0 3.65636C0 3.87637 0.080349 4.06673 0.24118 4.2276L5.92862 9.91504C6.08963 10.0759 6.27998 10.1564 6.5 10.1564C6.72002 10.1564 6.91055 10.0759 7.07125 9.91504L12.7587 4.22756C12.9193 4.06673 13 3.87637 13 3.65631C13 3.4363 12.9193 3.24594 12.7587 3.08493Z"
-                                                        fill="black" />
-                                                </svg>
-
-                                            </button>
-                                            <ul id="dropdownMenu1"
-                                                class="absolute w-full bg-white shadow-primary  rounded-md mt-1  z-10 hidden overflow-hidden text-left">
-                                                <li
-                                                    class="px-5 py-4 hover:bg-[#E558124D] hover:text-orange cursor-pointer">Test
-                                                    1</li>
-                                                <li
-                                                    class="px-5 py-4 hover:bg-[#E558124D] hover:text-orange cursor-pointer">Test
-                                                    2</li>
-                                            </ul>
+                                        class="flex bg-[#F5F5F5]  rounded-lg mb-6 sm:mb-9"
+                                        id="Signature-tab">
+                                        <div
+                                            class="w-full py-2.5 sm:py-4 rounded-lg text-center tab-item active cursor-pointer"
+                                            data-tab="content-tab">
+                                            Content
                                         </div>
-
-                                        <!-- Dropdown 2 -->
-                                        <div class="relative text-sm"
-                                            id="dropdown2">
-                                            <button id="dropdownButton2"
-                                                class="w-full border border-[#EBEBEB] rounded-lg px-5 py-4 text-left flex justify-between items-center cursor-pointer">
-                                                <span
-                                                    id="dropdownLabel2">Select
-                                                    A Email</span>
-                                                <svg width="13" height="13"
-                                                    id="arrow2"
-                                                    viewBox="0 0 13 13"
-                                                    fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M12.7587 3.08493C12.598 2.9241 12.4075 2.84375 12.1874 2.84375H0.812561C0.592368 2.84375 0.402012 2.9241 0.24118 3.08493C0.080349 3.24594 0 3.4363 0 3.65636C0 3.87637 0.080349 4.06673 0.24118 4.2276L5.92862 9.91504C6.08963 10.0759 6.27998 10.1564 6.5 10.1564C6.72002 10.1564 6.91055 10.0759 7.07125 9.91504L12.7587 4.22756C12.9193 4.06673 13 3.87637 13 3.65631C13 3.4363 12.9193 3.24594 12.7587 3.08493Z"
-                                                        fill="black" />
-                                                </svg>
-
-                                            </button>
-                                            <ul id="dropdownMenu2"
-                                                class="absolute w-full bg-white shadow-primary rounded mt-1  z-10 hidden text-left">
-                                                <li
-                                                    class="px-5 py-4 hover:bg-[#E558124D] text-orange cursor-pointer">Email
-                                                    1</li>
-                                                <li
-                                                    class="px-5 py-4 hover:bg-[#E558124D] cursor-pointer">Email
-                                                    2</li>
-                                            </ul>
+                                        <div
+                                            class="w-full py-2.5 sm:py-4 rounded-lg text-center tab-item cursor-pointer"
+                                            data-tab="structure-tab">
+                                            Structure
                                         </div>
                                     </div>
-                                    <a href="#"
-                                        class="py-3.5 px-[60px] mt-6   inline-block mx-auto bg-gradient-to-b from-[#FF925C] to-[#E55812] rounded-full text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
-                                        Share Generator
-                                    </a>
+                                    <div id="content-tab"
+                                        class="tab-content mt-4">
+
+                                        <div
+                                            class="grid grid-cols-2 sm:grid-cols-3 gap-5">
+                                            <div
+                                                class="bg-white shadow-secondary py-[22px] rounded-lg flex flex-col justify-center items-center">
+                                                <div>
+                                                    <img
+                                                        src="assets/images/svg/six-dots.svg"
+                                                        alt
+                                                        class="mb-1.5 mx-auto">
+                                                    <img
+                                                        src="assets/images/svg/text-pragraph.svg"
+                                                        alt
+                                                        class="mb-4 mx-auto">
+                                                    <p>Paragraph</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="bg-white shadow-secondary py-[22px] rounded-lg flex flex-col justify-center items-center">
+                                                <div>
+                                                    <img
+                                                        src="assets/images/svg/six-dots.svg"
+                                                        alt
+                                                        class="mb-1.5 mx-auto">
+                                                    <img
+                                                        src="assets/images/svg/text-pragraph.svg"
+                                                        alt
+                                                        class="mb-4 mx-auto">
+                                                    <p>Paragraph</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="bg-white shadow-secondary py-[22px] rounded-lg flex flex-col justify-center items-center">
+                                                <div>
+                                                    <img
+                                                        src="assets/images/svg/six-dots.svg"
+                                                        alt
+                                                        class="mb-1.5 mx-auto">
+                                                    <img
+                                                        src="assets/images/svg/text-pragraph.svg"
+                                                        alt
+                                                        class="mb-4 mx-auto">
+                                                    <p>Paragraph</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="bg-white shadow-secondary py-[22px] rounded-lg flex flex-col justify-center items-center">
+                                                <div>
+                                                    <img
+                                                        src="assets/images/svg/six-dots.svg"
+                                                        alt
+                                                        class="mb-1.5 mx-auto">
+                                                    <img
+                                                        src="assets/images/svg/text-pragraph.svg"
+                                                        alt
+                                                        class="mb-4 mx-auto">
+                                                    <p>Paragraph</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="bg-white shadow-secondary py-[22px] rounded-lg flex flex-col justify-center items-center">
+                                                <div>
+                                                    <img
+                                                        src="assets/images/svg/six-dots.svg"
+                                                        alt
+                                                        class="mb-1.5 mx-auto">
+                                                    <img
+                                                        src="assets/images/svg/text-pragraph.svg"
+                                                        alt
+                                                        class="mb-4 mx-auto">
+                                                    <p>Paragraph</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="bg-white shadow-secondary py-[22px] rounded-lg flex flex-col justify-center items-center">
+                                                <div>
+                                                    <img
+                                                        src="assets/images/svg/six-dots.svg"
+                                                        alt
+                                                        class="mb-1.5 mx-auto">
+                                                    <img
+                                                        src="assets/images/svg/text-pragraph.svg"
+                                                        alt
+                                                        class="mb-4 mx-auto">
+                                                    <p>Paragraph</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="bg-white shadow-secondary py-[22px] rounded-lg flex flex-col justify-center items-center">
+                                                <div>
+                                                    <img
+                                                        src="assets/images/svg/six-dots.svg"
+                                                        alt
+                                                        class="mb-1.5 mx-auto">
+                                                    <img
+                                                        src="assets/images/svg/text-pragraph.svg"
+                                                        alt
+                                                        class="mb-4 mx-auto">
+                                                    <p>Paragraph</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="bg-white shadow-secondary py-[22px] rounded-lg flex flex-col justify-center items-center">
+                                                <div>
+                                                    <img
+                                                        src="assets/images/svg/six-dots.svg"
+                                                        alt
+                                                        class="mb-1.5 mx-auto">
+                                                    <img
+                                                        src="assets/images/svg/text-pragraph.svg"
+                                                        alt
+                                                        class="mb-4 mx-auto">
+                                                    <p>Paragraph</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="bg-white shadow-secondary py-[22px] rounded-lg flex flex-col justify-center items-center">
+                                                <div>
+                                                    <img
+                                                        src="assets/images/svg/six-dots.svg"
+                                                        alt
+                                                        class="mb-1.5 mx-auto">
+                                                    <img
+                                                        src="assets/images/svg/text-pragraph.svg"
+                                                        alt
+                                                        class="mb-4 mx-auto">
+                                                    <p>Paragraph</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="structure-tab"
+                                        class="tab-content mt-4 hidden">This is
+                                        Structure tab data.</div>
                                 </div>
                             </div>
-
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap sm:flex-nowrap justify-end gap-3.5">
+                                <a href="#"
+                                    class="pt-2.5 pb-3 px-7  max-h-[42px]  inline-block bg-gradient-to-b from-[#FF925C] to-[#E55812] rounded-full text-xs sm:text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+                                    EDIT
+                                </a>
+                                <a href="#"
+                                    class="pt-2.5 pb-3 px-7  max-h-[42px]  inline-block bg-gradient-to-b from-[#FF925C] to-[#E55812] rounded-full text-xs sm:text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+                                    PREVIEW
+                                </a>
+                                <a href="#"
+                                    class="pt-2.5 pb-3 px-7  max-h-[42px]  inline-block bg-gradient-to-b from-[#FF925C] to-[#E55812] rounded-full text-xs sm:text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+                                    SAVE
+                                </a>
+                                <a href="#"
+                                    class="pt-2.5 pb-3 px-7  max-h-[42px]  inline-block bg-gradient-to-b from-[#FF925C] to-[#E55812] rounded-full text-xs sm:text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:-translate-y-1 hover:scale-105">
+                                    DOWNLOAD
+                                </a>
+                            </div>
+                            <div
+                                class="bg-white backdrop-blur-[187px] rounded-[20px] p-4 sm:p-9 2xl:p-16 mt-5 sm:mt-[30px] ">
+                                <div
+                                    class="border-2 rounded-2xl border-dashed border-[#707070] w-full h-[300px] sm:h-[640px]"></div>
+                            </div>
                         </div>
                     </div>
                 </main>
@@ -362,8 +463,17 @@
         </div>
 
         <script src="assets/js/jquery-3.6.0.min.js"></script>
-        <script src="assets/js/jquery.dataTables.min.js"></script>
-        <script src="assets/js/dataTables.responsive.min.js"></script>
         <script src="assets/js/common.js"></script>
+        <script>
+            $(document).ready(function () {
+    $('#Signature-tab .tab-item').on('click', function () {
+        $('#Signature-tab .tab-item').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-content').addClass('hidden');
+        var tabToShow = $(this).data('tab');
+        $('#' + tabToShow).removeClass('hidden');
+    });
+});  
+        </script>
     </body>
 </html>
