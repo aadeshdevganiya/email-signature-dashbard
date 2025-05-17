@@ -101,12 +101,12 @@ $(document).click(function (e) {
 
 
 
-$(document).ready(function () {
-    $('#myTable').DataTable({
-        responsive: true,
-        ordering: false
-    });
-});
+// $(document).ready(function () {
+//     $('#myTable').DataTable({
+//         responsive: true,
+//         ordering: false
+//     });
+// });
 
 function initDropdown(dropdownId) {
     const button = document.getElementById(`dropdownButton${dropdownId}`);

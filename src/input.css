@@ -60,7 +60,7 @@ table.dataTable.stripe > tbody > tr:nth-child(odd) > *, table.dataTable.display 
     @apply py-0.5 px-3 m-0 bg-orange text-white
 }
 
-.dataTables_wrapper .dataTables_length{
+.dataTables_wrapper .dataTables_length , .dataTables_wrapper .dataTables_filter{
     @apply mb-7
 }
 
