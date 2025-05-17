@@ -19,10 +19,6 @@
 .bg-gradient-primary-for.bg-gradient-primary-hover:hover{
     background: linear-gradient(180deg, #FFEBE3 0%, #E6F2FF 90.93%);
 }
-/* 
-.bg-gradient-primary-active{
-    background: linear-gradient(180deg, #eff0f1 0%, #eff0f1 90.93%) !important;
-} */
 
 body {
     @apply font-primary text-primary font-medium;
@@ -59,15 +55,12 @@ table.dataTable.stripe > tbody > tr:nth-child(odd) > *, table.dataTable.display 
 .dataTables_wrapper .dataTables_paginate .paginate_button{
     @apply py-0.5 px-3 m-0 bg-orange text-white
 }
-
 .dataTables_wrapper .dataTables_length , .dataTables_wrapper .dataTables_filter{
     @apply mb-7
 }
-
 .Signature-tab .tab-item.active{
     @apply bg-orange text-white
 }
-
 .select-plan .plan.active{
     @apply border-primary
 }

@@ -1,15 +1,33 @@
 //  sidebar
-const sidebar = document.getElementById('sidebar');
-const openBtn = document.getElementById('openSidebar');
-const closeBtn = document.getElementById('closeSidebar');
+$(document).ready(function () {
+    const $sidebar = $('#sidebar');
+    const $openBtn = $('#openSidebar');
+    const $closeBtn = $('#closeSidebar');
 
-openBtn.addEventListener('click', () => {
-    sidebar.classList.remove('-translate-x-full');
+    $openBtn.on('click', function () {
+        $sidebar.removeClass('-translate-x-full');
+        $('body').addClass('sidebar-open');
+    });
+
+    $closeBtn.on('click', function () {
+        $sidebar.addClass('-translate-x-full');
+        $('body').removeClass('sidebar-open');
+    });
+
+    $(document).on('click', function (e) {
+        if (
+            !$sidebar.is(e.target) &&
+            $sidebar.has(e.target).length === 0 &&
+            !$openBtn.is(e.target) &&
+            $openBtn.has(e.target).length === 0 &&
+            !$sidebar.hasClass('-translate-x-full')
+        ) {
+            $sidebar.addClass('-translate-x-full');
+            $('body').removeClass('sidebar-open');
+        }
+    });
 });
 
-closeBtn.addEventListener('click', () => {
-    sidebar.classList.add('-translate-x-full');
-});
 
 // Bell & User Dropdown Hover
 $(document).ready(function () {
@@ -99,15 +117,15 @@ $(document).click(function (e) {
     if (!$(target).is('.dashbord-editmenu, .profile-menu') && !$(target).parents().is('.dashbord-editmenu, .profile-menu')) { $('.dashbord-edititems, .profile-items').slideUp(); }
 });
 
+// table 
+$(document).ready(function () {
+    $('#myTable').DataTable({
+        responsive: true,
+        ordering: false
+    });
+});
 
-
-// $(document).ready(function () {
-//     $('#myTable').DataTable({
-//         responsive: true,
-//         ordering: false
-//     });
-// });
-
+// dropdown dashbard
 function initDropdown(dropdownId) {
     const button = document.getElementById(`dropdownButton${dropdownId}`);
     const menu = document.getElementById(`dropdownMenu${dropdownId}`);
